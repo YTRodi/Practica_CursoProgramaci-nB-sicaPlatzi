@@ -26,7 +26,7 @@ function deliverMoney()
             delivered.push(new Billete(bi.value,papers));
 
             money = money - (bi.value * papers);//el dinero que tengo lo toma pero le resta los billetes que ya entregué
-
+            
         }
         
         
@@ -44,20 +44,28 @@ function deliverMoney()
             if(e.quanty > 0)
             {
                 result.innerHTML +=  e.quanty + " billetes de $ " + e.value + "<br/>";
+                //console.log(e);
+                e.showBilletes(); 
             }
         }
         
     }
 } 
 
+///// Billetes /////
+var imgOfBilletes = [];
+imgOfBilletes["50"] = "billete_cincuenta.png";
+imgOfBilletes["20"] = "billete20.png";
+imgOfBilletes["10"] = "billete10.png";
+
 ///// Variables /////
 var boxContainer = [];
 var delivered = [];
-boxContainer.push(new Billete(100,5));
+//boxContainer.push(new Billete(100,5));
 boxContainer.push(new Billete(50,10)); //push le agrega nuevo objetos a nuestro array.
 boxContainer.push(new Billete(20,5)); 
 boxContainer.push(new Billete(10,10));
-boxContainer.push(new Billete(5,5)); 
+//boxContainer.push(new Billete(5,5)); 
 
 
 var money = 0;
@@ -67,3 +75,5 @@ var button = document.getElementById("extraer");//obtenemos un elemento de html 
 button.addEventListener("click",deliverMoney);//entregar dinero.
 
 var result = document.getElementById("resultado");//resultado.
+
+
