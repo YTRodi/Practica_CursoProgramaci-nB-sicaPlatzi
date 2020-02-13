@@ -1,1 +1,1 @@
-# Practica_CursoProgramaci-nB-sicaPlatzi
+# Practica_CursoProgramacionBasicaPlatzi
